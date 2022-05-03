@@ -38,7 +38,7 @@ dependencies {
 }
 sonarqube {
     properties {
-        property "sonar.login", "517d5db58d7d1ded7518cc656d5cd1d1a11e5a94"
+        property "sonar.login", ""
     }
 }
 tasks.named('test') {

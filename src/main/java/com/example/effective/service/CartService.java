@@ -46,7 +46,7 @@ public class CartService {
    * @version 1.0
    * @return
    */
-  public List<Sku> filterElectroinics(List<Sku> cartList) {
+  public List<Sku> filterElectronics(List<Sku> cartList) {
     var result = new ArrayList<Sku>();
     for (Sku sku : cartList) {
       //

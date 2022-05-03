@@ -13,7 +13,7 @@ public class Version1Test {
   public void filterElectroinics() {
     var cartService = new CartService();
     var cartList = CartService.getCartList();
-    var skus = cartService.filterElectroinics(cartList);
+    var skus = cartService.filterElectronics(cartList);
     System.out.println(JSON.toJSONString(skus));
   }
 }

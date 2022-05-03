@@ -8,16 +8,13 @@ import org.junit.jupiter.api.Test;
 /**
  * @author fuhaixin
  * @date 2022/5/3
- **/
+ */
 public class QueueTest {
 
   @Test
   public void arrayBlockingQueue() throws InterruptedException {
-    /**
-     * 基于数组的有界阻塞队列，队列容量为10
-     */
-    ArrayBlockingQueue queue =
-        new ArrayBlockingQueue<Integer>(10);
+    /** 基于数组的有界阻塞队列，队列容量为10 */
+    ArrayBlockingQueue queue = new ArrayBlockingQueue<Integer>(10);
 
     // 循环向队列添加元素
     for (int i = 0; i < 20; i++) {
@@ -28,11 +25,8 @@ public class QueueTest {
 
   @Test
   public void linkedBlockingQueue() throws InterruptedException {
-    /**
-     * 基于链表的有界/无界阻塞队列，队列容量为10
-     */
-    LinkedBlockingQueue queue =
-        new LinkedBlockingQueue<Integer>();
+    /** 基于链表的有界/无界阻塞队列，队列容量为10 */
+    LinkedBlockingQueue queue = new LinkedBlockingQueue<Integer>(10);
 
     // 循环向队列添加元素
     for (int i = 0; i < 20; i++) {
@@ -43,34 +37,33 @@ public class QueueTest {
 
   @Test
   public void test() throws InterruptedException {
-    /**
-     * 同步移交阻塞队列
-     */
+    /** 同步移交阻塞队列 */
     SynchronousQueue queue = new SynchronousQueue<Integer>();
 
     // 插入值
-    new Thread(() -> {
-      try {
-        queue.put(1);
-        System.out.println("插入成功");
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
-    }).start();
+    new Thread(
+            () -> {
+              try {
+                queue.put(1);
+                System.out.println("插入成功");
+              } catch (InterruptedException e) {
+                e.printStackTrace();
+              }
+            })
+        .start();
 
     // 删除值
-        /*
-        new Thread(() -> {
-            try {
-                queue.take();
-                System.out.println("删除成功");
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }).start();
-        */
+    /*
+    new Thread(() -> {
+        try {
+            queue.take();
+            System.out.println("删除成功");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }).start();
+    */
 
     Thread.sleep(1000L * 60);
   }
-
 }
