@@ -1,4 +1,4 @@
-package com.example.effective;
+package com.example.effective.stream;
 
 import com.alibaba.fastjson2.JSON;
 import com.example.effective.pojo.Sku;

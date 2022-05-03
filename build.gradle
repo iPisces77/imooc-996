@@ -2,11 +2,13 @@ plugins {
     id 'org.springframework.boot' version '2.6.7'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
+    id "io.freefair.lombok" version "6.4.3"
+    id "org.sonarqube" version "3.3"
 }
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
+sourceCompatibility = '17'
 
 configurations {
     compileOnly {
@@ -19,13 +21,26 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    compileOnly 'org.projectlombok:lombok'
-    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
-    annotationProcessor 'org.projectlombok:lombok'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-}
+    implementation("org.apache.commons:commons-collections4:4.4")
 
+    implementation("com.alibaba.fastjson2:fastjson2:2.0.1")
+    implementation("com.google.guava:guava:31.1-jre")
+//    implementation("commons-beanutils:commons-beanutils:1.9.4")
+    implementation("org.slf4j:slf4j-api:1.7.36")
+    testImplementation("org.slf4j:slf4j-jdk14:1.7.36")
+//    implementation("io.vavr:vavr:0.10.4")
+    implementation("org.springframework.boot:spring-boot-starter-validation")
+
+    implementation("com.alibaba:druid:1.2.9")
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+  implementation 'org.springframework.boot:spring-boot-starter-test'
+}
+sonarqube {
+    properties {
+        property "sonar.login", "517d5db58d7d1ded7518cc656d5cd1d1a11e5a94"
+    }
+}
 tasks.named('test') {
     useJUnitPlatform()
 }

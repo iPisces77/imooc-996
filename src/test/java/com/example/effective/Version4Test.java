@@ -1,7 +1,18 @@
-package com.example.effective;/**
- *
+package com.example.effective;
+
+import com.alibaba.fastjson2.JSON;
+import com.example.effective.service.CartService;
+import org.junit.jupiter.api.Test;
+
+/**
  * @author fuhaixin
  * @date 2022/4/30
- **/
+ */
 public class Version4Test {
+  @Test
+  public void filterSku() {
+    var cartList = CartService.getCartList();
+    var skus = CartService.filterSku(cartList, new SkuTotalPricePredicate());
+    System.out.println(JSON.toJSONString(skus));}
+
 }

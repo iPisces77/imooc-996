@@ -1,4 +1,4 @@
-package com.example.effective;
+package com.example.effective.stream;
 
 import java.io.IOException;
 import java.nio.file.Files;

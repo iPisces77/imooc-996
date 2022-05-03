@@ -6,13 +6,13 @@ package com.example.effective;
  * @author fuhaixin
  * @date 2022/4/30
  **/
-public enum Category {
+public enum CategoryEnum {
   CLOTHING(10,"服装"),
   ELECTRONICS(20,"数码类"),
   SPORTS(30,"运动类"),
   BOOKS(40,"图书类");
 
-  Category(Integer code, String name) {
+  CategoryEnum(Integer code, String name) {
     this.code = code;
     this.name = name;
   }
@@ -20,8 +20,8 @@ public enum Category {
 
 
   //商品类型的编号
-  private Integer code;
+  private final Integer code;
   //商品类型的名称
-  private String name;
+  private final String name;
 
 }

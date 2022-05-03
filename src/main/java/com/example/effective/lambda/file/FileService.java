@@ -1,4 +1,4 @@
-package com.example.effective.lambda;
+package com.example.effective.lambda.file;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;

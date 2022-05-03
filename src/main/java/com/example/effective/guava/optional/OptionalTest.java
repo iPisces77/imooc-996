@@ -1,5 +1,6 @@
-package com.example.effective.optional;
+package com.example.effective.guava.optional;
 
+import com.google.common.collect.Range;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
@@ -42,5 +43,6 @@ public class OptionalTest {
 
   public static void main(String[] args) {
     stream(null);
+
   }
 }
